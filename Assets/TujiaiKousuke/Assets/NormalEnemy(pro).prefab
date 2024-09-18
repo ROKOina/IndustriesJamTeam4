@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005893886, y: -0.19449735}
+  m_Offset: {x: 0, y: -0.17}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3889946, y: 1.1532402}
+  m_Size: {x: 1.37, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &4497536832674487854
 MonoBehaviour:
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 2199308994340015804}
   - component: {fileID: 7467134999007836956}
   m_Layer: 0
-  m_Name: EnemyAttackCollition
+  m_Name: EnemyWeakpointTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00077041984, y: 0.61524606}
+  m_Offset: {x: 0, y: 0.61}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -204,5 +204,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4637198, y: 0.3945198}
+  m_Size: {x: 1.4, y: 0.34}
   m_EdgeRadius: 0
