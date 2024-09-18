@@ -79,8 +79,8 @@ Shader "Unlit/PostEffect"
 
             fixed3 ApplyChromaticAberrationRG(v2f i, fixed deviation_width)
             {
-            	fixed2 r_texcoord = (i.uv - deviation_width);
-            	fixed2 g_texcoord = (i.uv + deviation_width);
+	            fixed2 r_texcoord = (i.uv - 0.5) * (1.0 + deviation_width) + 0.5;
+	            fixed2 g_texcoord = (i.uv - 0.5) * (1.0 - deviation_width) + 0.5;
             	
             	fixed col_r	= tex2D(_MainTex, r_texcoord).r;
             	fixed col_g	= tex2D(_MainTex, g_texcoord).g;
@@ -96,7 +96,7 @@ Shader "Unlit/PostEffect"
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                return fixed4((ApplyChromaticAberrationRG(i, 0.001) + ApplyBleachBypass(col.rgb)) * 0.5, 1.0);
+                return fixed4((ApplyChromaticAberrationRG(i, 0.005) + ApplyBleachBypass(col.rgb)) * 0.5, 1.0);
             }
             ENDCG
         }
