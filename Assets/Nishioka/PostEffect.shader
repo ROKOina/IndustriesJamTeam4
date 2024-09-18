@@ -90,13 +90,25 @@ Shader "Unlit/PostEffect"
             	return color;
             }
 
+            fixed3 ExtractLuminance(fixed3 base_color, fixed th)
+            {
+                fixed col_sum = base_color.r + base_color.g + base_color.b;
+                if(col_sum < th * 3.0)
+                    return 0.0;
+                else
+                    return base_color;
+            }
+
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                return fixed4((ApplyChromaticAberrationRG(i, 0.005) + ApplyBleachBypass(col.rgb)) * 0.5, 1.0);
+
+                fixed3 post_effect_col = (ApplyChromaticAberrationRG(i, 0.005) + ApplyBleachBypass(col.rgb)) * 0.5;
+
+                return fixed4(post_effect_col, 1.0);
             }
             ENDCG
         }
