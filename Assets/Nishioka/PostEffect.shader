@@ -44,13 +44,59 @@ Shader "Unlit/PostEffect"
                 return o;
             }
 
+            fixed GrayScale(fixed3 base)
+            {
+            	return base.r * 0.21 + 0.72 * base.g + 0.07 * base.b;
+            }
+            
+            // カラーのオーバーレイ計算をした値を返す関数。
+            fixed Overlay(fixed base,fixed mix_factor)
+            {
+            	float new_factor = 1.0;
+            	if(base < 0.5)
+            	{
+            		new_factor = base * mix_factor * 2.0;
+            	}
+            	else
+            	{
+            		new_factor = 2.0 * (base + mix_factor - base * mix_factor) - 1.0;
+            	}
+            	return new_factor;
+            }
+
+            fixed3 ApplyBleachBypass(fixed3 base_color)
+            {
+            	// グレースケール値は輝度法で算出
+            	float gray_scale_factor = GrayScale(base_color);
+            	
+            	float3 new_color;
+            	new_color.r = Overlay(base_color.r, gray_scale_factor);
+            	new_color.g = Overlay(base_color.g, gray_scale_factor);
+            	new_color.b = Overlay(base_color.b, gray_scale_factor);
+            	
+            	return new_color;
+            }
+
+            fixed3 ApplyChromaticAberrationRG(v2f i, fixed deviation_width)
+            {
+            	fixed2 r_texcoord = (i.uv - deviation_width);
+            	fixed2 g_texcoord = (i.uv + deviation_width);
+            	
+            	fixed col_r	= tex2D(_MainTex, r_texcoord).r;
+            	fixed col_g	= tex2D(_MainTex, g_texcoord).g;
+            	fixed col_b	= tex2D(_MainTex, i.uv).b;
+            	
+            	fixed3 color = fixed3(col_r, col_g, col_b);
+            	return color;
+            }
+
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
+                return fixed4((ApplyChromaticAberrationRG(i, 0.001) + ApplyBleachBypass(col.rgb)) * 0.5, 1.0);
             }
             ENDCG
         }
