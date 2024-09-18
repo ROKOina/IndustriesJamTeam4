@@ -30,4 +30,14 @@ public class FlyingEnemyMove : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
+        {
+
+
+
+        }
+    }
 }

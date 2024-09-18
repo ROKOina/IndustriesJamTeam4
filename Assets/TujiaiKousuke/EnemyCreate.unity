@@ -180,6 +180,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
+--- !u!1 &531859976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8246475264505236641, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
+  m_PrefabInstance: {fileID: 8246475264801244408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &531859982
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531859976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1126430898
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +595,22 @@ PrefabInstance:
     - target: {fileID: 8246475264505236641, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
       propertyPath: m_Name
       value: MovingFlyingEnemy(pro)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246475264505236643, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9318023
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246475264505236643, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2948525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246475264505236643, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.012592077
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246475264505236643, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.86611307
       objectReference: {fileID: 0}
     - target: {fileID: 8246475264505236645, guid: 891c09fb684a8cb4499f415a7b7f94d4, type: 3}
       propertyPath: m_RootOrder
