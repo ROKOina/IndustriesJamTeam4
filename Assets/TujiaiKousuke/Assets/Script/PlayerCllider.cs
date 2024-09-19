@@ -8,14 +8,12 @@ public class PlayerCllider : MonoBehaviour
     //static Vector2 prePosition;
     float EnemyPositionX;
     float PlayerPositionX;
-    bool HitJudge;
     GameObject Enemy;
 
     // Start is called before the first frame update
     void Start()
     {
        // prePosition = transform.position;
-        HitJudge = false;
         PlayerPositionX = transform.position.x + gameObject.GetComponent<BoxCollider2D>().size.x * 0.5f + -0.1f;
     }
 
@@ -42,7 +40,6 @@ public class PlayerCllider : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         { //“–‚½‚Á‚½‘ŠŽè‚ª“G‚¾‚Á‚½Žž
-            HitJudge = true;
 
             EnemyPositionX = collision.transform.position.x
                 - collision.gameObject.GetComponent<BoxCollider2D>().size.x*0.5f;
@@ -56,7 +53,7 @@ public class PlayerCllider : MonoBehaviour
             else
             {
                 Destroy(collision.transform.root.gameObject);
-                Debug.Log("AAA");
+                
             }
               
             Enemy = collision.gameObject;

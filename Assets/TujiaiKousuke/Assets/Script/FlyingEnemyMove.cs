@@ -19,7 +19,7 @@ public class FlyingEnemyMove : MonoBehaviour
         //à⁄ìÆèàóù
         Vector2 position = transform.position;
 
-        position.x = position.x + MoveSpeed * Time.deltaTime;
+        position.x = position.x + MasterSpeed.SpeedControl * Time.deltaTime;
 
         transform.position = position;
 
@@ -31,13 +31,4 @@ public class FlyingEnemyMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
-        {
-
-
-
-        }
-    }
 }
