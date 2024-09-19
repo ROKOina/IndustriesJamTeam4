@@ -35,7 +35,6 @@ public class Plyere_main : MonoBehaviour
                 Player.GetComponent<Player>().StartCoroutine(Player.GetComponent<Player>().kaiten(Jouge));
                 Jouge++;
                 Kaisuu--;
-                anim.SetTrigger("NONE");
                 anim.SetTrigger("Swap");
             }
             else if (Kaisuu == 1 && Jouge == 2)//‰º‚ÉˆÚ“®
@@ -44,7 +43,6 @@ public class Plyere_main : MonoBehaviour
                 Player.GetComponent<Player>().StartCoroutine(Player.GetComponent<Player>().kaiten(Jouge));
                 Jouge--;
                 Kaisuu--;
-                anim.SetTrigger("NONE");
                 anim.SetTrigger("Swap");
             }
         }
