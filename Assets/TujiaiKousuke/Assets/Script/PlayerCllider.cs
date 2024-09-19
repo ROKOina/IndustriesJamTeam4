@@ -21,6 +21,8 @@ public class PlayerCllider : MonoBehaviour
     public float dmgEffPower = 1;
     private bool isDamage = false;
 
+    public GameObject EnemyDeathEff;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +83,8 @@ public class PlayerCllider : MonoBehaviour
                 audioa.PlayOneShot(sound03);
                 audioa.PlayOneShot(sound04);
                 Debug.Log(MasterSpeed.SpeedControl);
+                //エフェクト
+                Instantiate(EnemyDeathEff, new Vector2(collision.transform.position.x, collision.transform.position.y), Quaternion.identity);
             }
             else
             {
