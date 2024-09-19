@@ -7,7 +7,7 @@ public class BOSS : MonoBehaviour
     // 経過時間の計測用
     private float elapsedTime = 0f;
     // 加算する間隔（10秒）
-    private float interval = 3f;
+    private float interval = 10f;
 
     float speed =1.0f;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class BOSS : MonoBehaviour
         if (elapsedTime >= interval)
         {
             // カウントを増加
-            speed -= 0.1f;
+            speed -= 0.5f;
             Debug.Log(speed);
 
             // 経過時間をリセット
