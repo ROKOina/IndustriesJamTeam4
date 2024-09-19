@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class WallDeath : MonoBehaviour
-{
+{ 
     // 目的地の配列
     public Vector3[] targetPositions = new Vector3[3];
 
@@ -19,6 +19,7 @@ public class WallDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         // 現在の目的地と対応する速度を取得
         Vector3 currentTarget = targetPositions[currentTargetIndex];
         float currentSpeed = speeds[currentTargetIndex];

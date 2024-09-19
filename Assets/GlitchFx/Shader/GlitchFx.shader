@@ -57,7 +57,7 @@ Shader "Hidden/GlitchFx"
         float3 color = lerp(source, tex2D(_BufferTex, uv), w_b).rgb;
 
         // Shuffle color components.
-        color = lerp(color, color - source.bbb * 2 + color.grr * 2, w_c);
+        color = lerp(color, color - source.gbg * 2 + color.grr * 2, w_c);
 
         return float4(color, source.a);
     }

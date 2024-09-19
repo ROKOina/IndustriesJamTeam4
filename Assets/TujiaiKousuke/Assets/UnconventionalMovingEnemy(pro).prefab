@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 916918565367820000}
   - component: {fileID: 8205007977641664435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyWeakpointTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7347968994691947994}
   - component: {fileID: 4196316039838143118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyWeakpointBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 7146902496296254031}
   - component: {fileID: 7146902496296254024}
   - component: {fileID: 7146902496296254025}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnconventionalMovingEnemy(pro)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
