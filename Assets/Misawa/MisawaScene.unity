@@ -995,6 +995,7 @@ GameObject:
   - component: {fileID: 577259202}
   - component: {fileID: 577259203}
   - component: {fileID: 577259204}
+  - component: {fileID: 577259206}
   - component: {fileID: 577259205}
   m_Layer: 0
   m_Name: Main Camera
@@ -1219,6 +1220,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gliver: 1
+--- !u!114 &577259206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577259197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bec1b659333c5340b347030ba85c094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _intensity: 0
+  shader: {fileID: 4800000, guid: f25bff6a222279244a8a43c2f71ed22f, type: 3}
 --- !u!1001 &642250088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1277,6 +1292,10 @@ PrefabInstance:
     - target: {fileID: 4805229886492713969, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy(pro) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805229886492713969, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8919422090222588835, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
       propertyPath: MoveSpeed
@@ -1666,6 +1685,10 @@ PrefabInstance:
     - target: {fileID: 4805229886492713969, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy(pro) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805229886492713969, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8919422090222588835, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
       propertyPath: MoveSpeed
@@ -2089,6 +2112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b78dcb12662964ca7175c6d43070b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmgEffSpeed: 5
+  dmgEffPower: 0.5
 --- !u!114 &1541722733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,6 +2368,10 @@ PrefabInstance:
     - target: {fileID: 4805229886492713969, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
       propertyPath: m_Name
       value: FlyingEnemy(pro) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805229886492713969, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8919422090222588835, guid: 85b98931660fe1348b18d7a607d371fd, type: 3}
       propertyPath: MoveSpeed

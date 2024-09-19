@@ -16,8 +16,15 @@ public class WallDeath : MonoBehaviour
     // 遷移先のシーン名
     public string nextSceneName;
 
-    // Update is called once per frame
-    void Update()
+    private bool shakeFlag=false;
+
+	private void Start()
+	{
+        shakeFlag = false;
+	}
+
+	// Update is called once per frame
+	void Update()
     {
       
         // 現在の目的地と対応する速度を取得
@@ -34,12 +41,19 @@ public class WallDeath : MonoBehaviour
             // 最後の目的地に到達した場合、シーン遷移を行う
             if (currentTargetIndex == targetPositions.Length - 1)
             {
-                SceneManager.LoadScene(nextSceneName);
-            }
+				SceneManager.LoadScene(nextSceneName);
+			}
             else
             {
                 // 次の目的地に切り替え
                 currentTargetIndex = (currentTargetIndex + 1) % targetPositions.Length;
+                if (!shakeFlag)
+                {
+                    if (GameObject.Find("Main Camera"))
+                        if (GameObject.Find("Main Camera").GetComponent<CameraShake>())
+                            GameObject.Find("Main Camera").GetComponent<CameraShake>().Shake();
+                }
+                shakeFlag = true;
             }
         }
     }
