@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5448483969082452542}
   - component: {fileID: 9190242914750232255}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: EnemyWeakpointTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 8919422090222588835}
   - component: {fileID: 7000878087281035631}
   - component: {fileID: -1708994820031379136}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FlyingEnemy(pro)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

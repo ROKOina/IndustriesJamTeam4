@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6992594985907596301}
   - component: {fileID: 2232596744213609911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyWeakpointTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683482459776015706}
   - component: {fileID: 676857935520245950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyWeakpointBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 8246475264505236643}
   - component: {fileID: 8246475264505236642}
   - component: {fileID: 8401667817169768034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingFlyingEnemy(pro)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
