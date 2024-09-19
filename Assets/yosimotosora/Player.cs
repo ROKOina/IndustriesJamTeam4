@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public AudioClip sound01;
     public float PleyreSpeed=5;//d—Í”½“]‘¬“x
     public float Nameraka=0.5f;//Å‰‚ÌPleyreSpeed‚ÌŠ„‡
     public GameObject gool;//–Ú“I’n
@@ -19,11 +20,11 @@ public class Player : MonoBehaviour
 
     public int Kaisuu = 1;//d—Í”½“]§ŒÀ
     public int Kanou = 1;//‰ñ“]‰Â”\”
-
+    AudioSource audioa;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioa = GetComponent<AudioSource>();
     }
 
     public IEnumerator kaiten(int ja)
@@ -31,7 +32,8 @@ public class Player : MonoBehaviour
         Kanou--;
 
         yield return new WaitForSeconds(0.1f);
-            if (ja == 1)//ã‚É‰ñ“]
+        audioa.PlayOneShot(sound01);
+        if (ja == 1)//ã‚É‰ñ“]
             {
              
                 transform.rotation = Quaternion.Euler(180, 0, 0);//Šp“x•ÏX
