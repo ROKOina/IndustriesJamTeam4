@@ -20,11 +20,14 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //相手のレイヤーを確認する
         string LayerName = LayerMask.LayerToName(collision.gameObject.layer);
         if(LayerName == "EnemyAttack")
         {
-            Destroy(Player_Main.gameObject);
-            Destroy(gameObject.transform.root.gameObject);
+            //衝突した時の処理
+            //Destroy(Player_Main.gameObject);
+            //Destroy(gameObject.transform.root.gameObject);
+            Destroy(collision.gameObject.transform.root.gameObject);
         }
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6355490579773087024}
   - component: {fileID: 4841067660918746219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyAttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
