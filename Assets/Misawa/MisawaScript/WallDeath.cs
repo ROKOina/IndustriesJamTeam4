@@ -47,13 +47,18 @@ public class WallDeath : MonoBehaviour
             {
                 // 次の目的地に切り替え
                 currentTargetIndex = (currentTargetIndex + 1) % targetPositions.Length;
-                if (!shakeFlag)
+
+                //カメラシェイク
+                if (currentTargetIndex == 1)
                 {
-                    if (GameObject.Find("Main Camera"))
-                        if (GameObject.Find("Main Camera").GetComponent<CameraShake>())
-                            GameObject.Find("Main Camera").GetComponent<CameraShake>().Shake();
+                    if (!shakeFlag)
+                    {
+                        if (GameObject.Find("Main Camera"))
+                            if (GameObject.Find("Main Camera").GetComponent<CameraShake>())
+                                GameObject.Find("Main Camera").GetComponent<CameraShake>().Shake();
+                    }
+                    shakeFlag = true;
                 }
-                shakeFlag = true;
             }
         }
     }
