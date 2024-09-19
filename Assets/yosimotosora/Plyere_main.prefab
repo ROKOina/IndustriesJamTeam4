@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423e1ffab012b6044b379da4df138ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PleyrePosition: 10
+  PleyrePosition: 9
   Kaisuu: 0
   distance: 0
   Jouge: 1
