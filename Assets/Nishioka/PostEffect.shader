@@ -106,7 +106,7 @@ Shader "Unlit/PostEffect"
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
 
-                fixed3 post_effect_col = ApplyBleachBypass(col.rgb);
+                fixed3 post_effect_col = (ApplyChromaticAberrationRG(i, 0.005) + ApplyBleachBypass(col.rgb)) * 0.5;
 
                 return fixed4(post_effect_col, 1.0);
             }
