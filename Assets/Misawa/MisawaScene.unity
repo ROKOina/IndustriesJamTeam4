@@ -809,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659460216857923416, guid: 5dd8f49de8ec1f2479afa036e05e8359, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.7
+      value: 18.31
       objectReference: {fileID: 0}
     - target: {fileID: 3659460216857923416, guid: 5dd8f49de8ec1f2479afa036e05e8359, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2089,6 +2089,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b78dcb12662964ca7175c6d43070b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1541722733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541722726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044834364507f4ba0bdf7bc8ff7724ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetSpriteRenderer: {fileID: 1541722737}
+  _afterImageNum: 2
+  _ignoreTimeScale: 0
+  _colorList:
+  - {r: 0.21226418, g: 0.34100083, b: 1, a: 0.5}
+  _isSameColor: 1
+  _materialType: 0
+  _materialList: []
+  _span: 0.05
+  _duraction: 0.3
+  _fadeTime: 0.05
+  _colorNum: 1
+  _materialNum: 1
+--- !u!212 &1541722737 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1857049177827461979, guid: c61def40006bb6a4883458c844fca039, type: 3}
+  m_PrefabInstance: {fileID: 1181410252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579244932
 GameObject:
   m_ObjectHideFlags: 0
