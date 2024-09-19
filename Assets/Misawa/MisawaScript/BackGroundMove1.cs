@@ -12,7 +12,7 @@ public class BackGroundMove1 : MonoBehaviour
 
         if (transform.position.x <= -19.2)
         {
-            transform.position += new Vector3(38.4f, 0f);
+            transform.position = new Vector3(38.4f, 0f);
         }
     }
 }
