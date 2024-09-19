@@ -15,6 +15,7 @@ public class seni : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            MasterSpeed.SpeedControl = 0;
             SceneManager.LoadScene("Title");
         }
 

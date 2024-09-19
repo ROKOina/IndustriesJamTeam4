@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class BOSS : MonoBehaviour
 {
-    public float speed =0.6f;
+    // 経過時間の計測用
+    private float elapsedTime = 0f;
+    // 加算する間隔（10秒）
+    private float interval = 3f;
+
+    float speed =1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +19,18 @@ public class BOSS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        elapsedTime += Time.deltaTime;
+
+        // 経過時間が設定した間隔を超えたら
+        if (elapsedTime >= interval)
         {
-         
+            // カウントを増加
+            speed -= 0.1f;
+            Debug.Log(speed);
 
-
+            // 経過時間をリセット
+            elapsedTime = 0f;
         }
-        transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+        transform.position += new Vector3((-speed-MasterSpeed.SpeedControl )* Time.deltaTime, 0, 0);
     }
 }

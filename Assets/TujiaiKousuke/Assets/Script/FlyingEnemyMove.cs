@@ -19,7 +19,7 @@ public class FlyingEnemyMove : MonoBehaviour
         //ˆÚ“®ˆ—
         Vector2 position = transform.position;
 
-        position.x = position.x + MoveSpeed * Time.deltaTime;
+        position.x = position.x + (MoveSpeed-MasterSpeed.SpeedControl) * Time.deltaTime;
 
         transform.position = position;
 

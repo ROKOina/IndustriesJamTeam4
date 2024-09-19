@@ -51,12 +51,16 @@ public class PlayerCllider : MonoBehaviour
 
             if (PlayerPositionX > EnemyPositionX+0.1f)
             {
+                MasterSpeed.SpeedControl+= 0.1f;
                 Destroy(collision.transform.root.gameObject);
+                Debug.Log(MasterSpeed.SpeedControl);
             }
             else
             {
+
                 Destroy(collision.transform.root.gameObject);
-                Debug.Log("AAA");
+                Debug.Log("è’ìÀ");
+                MasterSpeed.SpeedControl = 0f;
             }
               
             Enemy = collision.gameObject;

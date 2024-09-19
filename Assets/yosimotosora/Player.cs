@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int Life=3;//体力
     public float PleyreSpeed=5;//重力反転速度
     public float Nameraka=0.5f;//最初のPleyreSpeedの割合
     public GameObject gool;//目的地
@@ -17,7 +16,7 @@ public class Player : MonoBehaviour
     public float start;//自分の位置
     private bool moveFlg;//移動しているか確認
     private float t;//イージンクに使う変数
-    public Slider HPSlider;//体力バー
+
     public int Kaisuu = 1;//重力反転制限
     public int Kanou = 1;//回転可能数
 
@@ -31,7 +30,7 @@ public class Player : MonoBehaviour
     {
         Kanou--;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
             if (ja == 1)//上に回転
             {
              
@@ -50,7 +49,6 @@ public class Player : MonoBehaviour
     }
     void MoveUpdate()
     {
-        HPSlider.value = Life;//体力をUI（体力バー）
         if (!moveFlg)
             return;
 
@@ -74,10 +72,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Life == 0)
-        {
-            //SceneManager.LoadScene("ゲームオーバーシーンの名前");//ゲームオーバーシーン読み込む
-        }
         distance = gool.transform.position.y - transform.position.y;//goolのｙの座標と自分のオブジェクトのｙ
         if (distance*distance>=1&&moveFlg==false) 
         {
@@ -99,7 +93,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")//敵に当たった時
         {
-            Life--;//体力が減る
+     
         }
         if (collision.gameObject.tag == "Ground")//敵に当たった時
         {
