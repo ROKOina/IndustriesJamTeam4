@@ -1391,7 +1391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -2834,6 +2834,14 @@ PrefabInstance:
     - target: {fileID: 3039981592481399501, guid: bf4096fc41090814e8e89470c54a78e3, type: 3}
       propertyPath: m_Name
       value: Lifebar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039981592550913860, guid: bf4096fc41090814e8e89470c54a78e3, type: 3}
+      propertyPath: m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039981592550913860, guid: bf4096fc41090814e8e89470c54a78e3, type: 3}
+      propertyPath: m_MaxValue
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3039981592550913863, guid: bf4096fc41090814e8e89470c54a78e3, type: 3}
       propertyPath: m_AnchoredPosition.x
