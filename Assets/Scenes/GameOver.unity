@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333019557}
   - component: {fileID: 333019558}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ScoreObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,9 +323,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1706800875}
   m_Father: {fileID: 818623939}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -344,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3775c77b3b3b0f40a033c1f552a4b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1706800876}
 --- !u!1 &452983176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,7 +5170,7 @@ GameObject:
   - component: {fileID: 818623938}
   - component: {fileID: 818623937}
   - component: {fileID: 818623936}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5250,7 +5252,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2060627598}
-  - {fileID: 1706800875}
   - {fileID: 333019557}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -5369,7 +5370,7 @@ GameObject:
   - component: {fileID: 1706800875}
   - component: {fileID: 1706800877}
   - component: {fileID: 1706800876}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5383,13 +5384,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706800874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 818623939}
-  m_RootOrder: 1
+  m_Father: {fileID: 333019557}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5409,7 +5410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9963719, g: 1, b: 0.042452812, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
