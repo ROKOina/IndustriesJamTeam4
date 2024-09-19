@@ -846,14 +846,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
-    - target: {fileID: 89458874557120926, guid: 5e6e47e14acec19448994a3329b517d4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 89458874557120927, guid: 5e6e47e14acec19448994a3329b517d4, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6e47e14acec19448994a3329b517d4, type: 3}
 --- !u!1 &698224419
