@@ -15,6 +15,7 @@ public class GradualBlink : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         AllScore.tokuten = 0;
         Gliver = 0.01f;
         GliScript = GameObject.Find("Main Camera").GetComponent<GlitchFx>();
