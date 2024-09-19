@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class WallDeath : MonoBehaviour
-{ 
+{
+    public AudioClip sound01;
+    AudioSource audioa;
     // 目的地の配列
     public Vector3[] targetPositions = new Vector3[3];
 
@@ -19,7 +21,8 @@ public class WallDeath : MonoBehaviour
     private bool shakeFlag=false;
 
 	private void Start()
-	{
+    {
+        audioa = GetComponent<AudioSource>();
         shakeFlag = false;
 	}
 
@@ -51,6 +54,7 @@ public class WallDeath : MonoBehaviour
                 //カメラシェイク
                 if (currentTargetIndex == 1)
                 {
+                    audioa.PlayOneShot(sound01);
                     if (!shakeFlag)
                     {
                         if (GameObject.Find("Main Camera"))
