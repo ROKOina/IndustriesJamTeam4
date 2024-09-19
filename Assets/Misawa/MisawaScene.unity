@@ -1751,6 +1751,18 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1857049177827461978, guid: c61def40006bb6a4883458c844fca039, type: 3}
       propertyPath: m_RootOrder
       value: 2
