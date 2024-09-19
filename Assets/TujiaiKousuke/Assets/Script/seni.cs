@@ -9,9 +9,12 @@ public class seni : MonoBehaviour
     public float blinkSpeed = 1.0f;  // “_–Å‚Ì‘¬‚³
     private Renderer objectRenderer;
     private bool increasingAlpha = true;
+    public AudioClip sound01;
+    AudioSource audioa;
     // Start is called before the first frame update
     void Start()
     {
+        audioa = GetComponent<AudioSource>();
         Application.targetFrameRate = 100;
         objectRenderer = GetComponent<Renderer>();
     }
@@ -22,6 +25,7 @@ public class seni : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             MasterSpeed.SpeedControl = 0;
+            audioa.PlayOneShot(sound01);
             SceneManager.LoadScene("Title");
         }
         // Œ»İ‚Ì“§–¾“x‚ğæ“¾
