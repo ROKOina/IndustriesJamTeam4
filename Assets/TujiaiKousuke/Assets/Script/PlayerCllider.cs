@@ -10,6 +10,10 @@ public class PlayerCllider : MonoBehaviour
     float PlayerPositionX;
     bool HitJudge;
     GameObject Enemy;
+    public AudioClip sound01;
+    public AudioClip sound02;
+    public AudioClip sound03;
+    AudioSource audioa;
 
     private float damageEffectValue = 0;
     public float dmgEffSpeed = 1;
@@ -19,6 +23,7 @@ public class PlayerCllider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioa = GetComponent<AudioSource>();
         // prePosition = transform.position;
         damageEffectValue = 0;
          HitJudge = false;
@@ -72,6 +77,7 @@ public class PlayerCllider : MonoBehaviour
                 MasterSpeed.SpeedControl+= 0.5f;
                 Destroy(collision.transform.root.gameObject);
                 AllScore.tokuten += 100;
+                audioa.PlayOneShot(sound03);
                 Debug.Log(MasterSpeed.SpeedControl);
             }
             else
@@ -79,6 +85,8 @@ public class PlayerCllider : MonoBehaviour
                 Debug.Log("衝突");
                 MasterSpeed.SpeedControl = 0f;
                 //ダメージ演出
+                audioa.PlayOneShot(sound01);
+                audioa.PlayOneShot(sound02);
                 isDamage = true;
                 damageEffectValue = 0;
             }
