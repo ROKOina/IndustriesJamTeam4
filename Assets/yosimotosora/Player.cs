@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int Life=3;//体力
     public float PleyreSpeed=5;//重力反転速度
     public GameObject gool;//目的地
     public float distance=0.0f;
@@ -15,7 +14,6 @@ public class Player : MonoBehaviour
     public float start;//自分の位置
     private bool moveFlg;//移動しているか確認
     private float t;//イージンクに使う変数
-    public Slider HPSlider;//体力バー
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +23,7 @@ public class Player : MonoBehaviour
 
     void MoveUpdate()
     {
-        HPSlider.value = Life;
+    
         if (!moveFlg)
             return;
 
@@ -45,10 +43,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Life == 0)
-        {
-            //SceneManager.LoadScene("ゲームオーバーシーンの名前");//ゲームオーバーシーン読み込む
-        }
+      
         distance = gool.transform.position.y - transform.position.y;//goolのｙの座標と自分のオブジェクトのｙ
         if (distance*distance>=1&&moveFlg==false) 
         {
@@ -65,7 +60,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")//敵に当たった時
         {
-            Life--;//体力が減る
+      
         }
     }
 }

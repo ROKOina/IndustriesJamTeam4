@@ -1286,6 +1286,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857049177827461976, guid: c61def40006bb6a4883458c844fca039, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1857049177827461978, guid: c61def40006bb6a4883458c844fca039, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1354,6 +1362,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7787478629508990990, guid: c61def40006bb6a4883458c844fca039, type: 3}
+      propertyPath: gool
+      value: 
+      objectReference: {fileID: 1801675010}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61def40006bb6a4883458c844fca039, type: 3}
 --- !u!1 &911114583
