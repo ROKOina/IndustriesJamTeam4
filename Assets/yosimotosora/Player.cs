@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private bool moveFlg;//移動しているか確認
     private float t;//イージンクに使う変数
     public Slider HPSlider;//体力バー
+    public int Kaisuu = 1;//重力反転制限
+    public int Kanou = 1;//回転可能数
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +27,30 @@ public class Player : MonoBehaviour
         
     }
 
+    public IEnumerator kaiten(int ja)
+    {
+        Kanou--;
+
+        yield return new WaitForSeconds(1);
+            if (ja == 1)//上に回転
+            {
+             
+                transform.rotation = Quaternion.Euler(180, 0, 0);//角度変更
+                Kaisuu++;
+            }
+            else if (ja == 2)//下に回転
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);//角度変更
+                Kaisuu--;
+            }
+        
+        
+
+        
+    }
     void MoveUpdate()
     {
-        HPSlider.value = Life;
+        HPSlider.value = Life;//体力をUI（体力バー）
         if (!moveFlg)
             return;
 
@@ -43,7 +66,7 @@ public class Player : MonoBehaviour
             moveFlg = false;
         }
         float a = Easing.BackIn(t, 1, 0, 1, 1);
-
+        
         float iti = a * dist;
         transform.position = (new Vector2(transform.position.x, start + iti));
     }
@@ -65,13 +88,22 @@ public class Player : MonoBehaviour
             //Vector3 kaudou = gool.transform.position - transform.position;//角度取得
             //transform.rotation = Quaternion.FromToRotation(Vector3.up, kaudou);//角度変更
         }
+        if (Input.GetKeyDown(KeyCode.Space)&&Kanou == 1)//回転を行う
+        {
+            //StartCoroutine(kaiten());
+        }
         MoveUpdate();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")//敵に当たった時
         {
             Life--;//体力が減る
+        }
+        if (collision.gameObject.tag == "Ground")//敵に当たった時
+        {
+            Kanou = 1;//回転可能数
         }
     }
 }
