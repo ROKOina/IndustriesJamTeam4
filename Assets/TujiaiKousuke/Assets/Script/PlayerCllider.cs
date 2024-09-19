@@ -53,6 +53,7 @@ public class PlayerCllider : MonoBehaviour
             {
                 MasterSpeed.SpeedControl+= 0.5f;
                 Destroy(collision.transform.root.gameObject);
+                AllScore.tokuten += 100;
                 Debug.Log(MasterSpeed.SpeedControl);
             }
             else
