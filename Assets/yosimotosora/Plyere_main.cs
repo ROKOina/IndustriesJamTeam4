@@ -20,14 +20,14 @@ public class Plyere_main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (distance >= 0 && distance <= 1)
+        distance = Vector2.Distance(transform.position, Player.transform.position);
+        if (distance >= 0 && distance <= 0.5)
         {
             if (Kaisuu == 0)
             {
                 Kaisuu++;
             }
         }
-        distance = Vector2.Distance(transform.position, Player.transform.position);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Kaisuu == 1 && Jouge == 1)//ã‚ÉˆÚ“®

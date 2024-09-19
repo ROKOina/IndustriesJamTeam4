@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Plyere : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    public int Life=3;//体力
     public float PleyreSpeed=5;//重力反転速度
     public GameObject gool;//目的地
     public float distance=0.0f;
-    public Vector3 Offset = Vector3.zero;
     public float dist=0.0f;
     public float start;//自分の位置
     private bool moveFlg;//移動しているか確認
-    private float t;
+    private float t;//イージンクに使う変数
+    public Slider HPSlider;//体力バー
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +25,12 @@ public class Plyere : MonoBehaviour
 
     void MoveUpdate()
     {
+        HPSlider.value = Life;
         if (!moveFlg)
             return;
 
         dist = gool.transform.position.y - start;//player_mainのｙの座標ー最初の位置で距離をだす
-        t += Time.deltaTime*0.5f;//毎秒更新
+        t += Time.deltaTime*PleyreSpeed;//毎秒更新　プレイヤーの速さ
         if (t >= 1)
         {
             t = 1;
@@ -41,6 +45,10 @@ public class Plyere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Life == 0)
+        {
+            //SceneManager.LoadScene("ゲームオーバーシーンの名前");//ゲームオーバーシーン読み込む
+        }
         distance = gool.transform.position.y - transform.position.y;//goolのｙの座標と自分のオブジェクトのｙ
         if (distance*distance>=1&&moveFlg==false) 
         {
@@ -51,10 +59,13 @@ public class Plyere : MonoBehaviour
             //Vector3 kaudou = gool.transform.position - transform.position;//角度取得
             //transform.rotation = Quaternion.FromToRotation(Vector3.up, kaudou);//角度変更
         }
-
-
         MoveUpdate();
-        
-
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")//敵に当たった時
+        {
+            Life--;//体力が減る
+        }
     }
 }
