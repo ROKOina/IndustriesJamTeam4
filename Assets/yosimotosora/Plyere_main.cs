@@ -8,10 +8,12 @@ public class Plyere_main : MonoBehaviour
     public float distance = 0.0f;//プレイヤーとメインプレイヤーの距離
     public int Jouge = 0;//上下確認
     public GameObject Player;//プレイヤーオブジェクト
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        anim =  Player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,8 @@ public class Plyere_main : MonoBehaviour
                 Player.GetComponent<Player>().StartCoroutine(Player.GetComponent<Player>().kaiten(Jouge));
                 Jouge++;
                 Kaisuu--;
+                anim.SetTrigger("NONE");
+                anim.SetTrigger("Swap");
             }
             else if (Kaisuu == 1 && Jouge == 2)//下に移動
             {
@@ -40,6 +44,8 @@ public class Plyere_main : MonoBehaviour
                 Player.GetComponent<Player>().StartCoroutine(Player.GetComponent<Player>().kaiten(Jouge));
                 Jouge--;
                 Kaisuu--;
+                anim.SetTrigger("NONE");
+                anim.SetTrigger("Swap");
             }
         }
     }
