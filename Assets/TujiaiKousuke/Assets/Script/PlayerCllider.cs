@@ -13,6 +13,7 @@ public class PlayerCllider : MonoBehaviour
     public AudioClip sound01;
     public AudioClip sound02;
     public AudioClip sound03;
+    public AudioClip sound04;
     AudioSource audioa;
 
     private float damageEffectValue = 0;
@@ -78,6 +79,7 @@ public class PlayerCllider : MonoBehaviour
                 Destroy(collision.transform.root.gameObject);
                 AllScore.tokuten += 100;
                 audioa.PlayOneShot(sound03);
+                audioa.PlayOneShot(sound04);
                 Debug.Log(MasterSpeed.SpeedControl);
             }
             else
