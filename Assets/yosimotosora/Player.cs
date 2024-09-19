@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
 {
     public int Life=3;//体力
     public float PleyreSpeed=5;//重力反転速度
+    public float Nameraka=0.5f;//最初のPleyreSpeedの割合
     public GameObject gool;//目的地
     public float distance=0.0f;
     public float dist=0.0f;
@@ -30,7 +32,11 @@ public class Player : MonoBehaviour
             return;
 
         dist = gool.transform.position.y - start;//player_mainのｙの座標ー最初の位置で距離をだす
-        t += Time.deltaTime*PleyreSpeed;//毎秒更新　プレイヤーの速さ
+        t += Time.deltaTime*PleyreSpeed* Nameraka;//毎秒更新　プレイヤーの速さ
+        if (t >= 0.5f)
+        {
+            t += Time.deltaTime *math.pow(PleyreSpeed,3);
+        }
         if (t >= 1)
         {
             t = 1;
