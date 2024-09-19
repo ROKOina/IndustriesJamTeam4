@@ -48,4 +48,4 @@ MonoBehaviour:
   Kaisuu: 0
   distance: 0
   Jouge: 1
-  Player: {fileID: 0}
+  Player: {fileID: 1857049177827461925, guid: e2f2759d188bd884a930b5a7c670fb2e, type: 3}
