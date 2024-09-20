@@ -9,7 +9,7 @@ public class CameraShake : MonoBehaviour
     private void Start()
     {
         // ƒJƒƒ‰‚ÌˆÊ’u‚ğæ“¾
-        originalCameraPos = new Vector3(0, 0, 0);   //ŒÅ’è‚È‚Ì‚Å
+        originalCameraPos = new Vector3(0, 0, -10);   //ŒÅ’è‚È‚Ì‚Å
         //originalCameraPos = Camera.main.transform.position;
     }
 
