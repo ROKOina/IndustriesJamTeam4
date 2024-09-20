@@ -20,7 +20,7 @@ public class MovingNormalEnemyMove : MonoBehaviour
         //ˆÚ“®ˆ—
         Vector2 position = transform.position;
 
-        position.x = position.x + (MoveSpeed + OwnSpeed) * Time.deltaTime;
+        position.x = position.x + (MasterSpeed.SpeedControl + OwnSpeed) * Time.deltaTime;
 
         transform.position = position;
 
