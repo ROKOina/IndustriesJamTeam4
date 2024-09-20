@@ -20,9 +20,12 @@ public class SpecificSpawner : MonoBehaviour
         {
             // ランダムに1つのスポナーを選択
             int randomIndex = Random.Range(0, spawners.Length);
-           
+
             // 選択されたスポナーから特定の弾を発射
-            Instantiate(bulletPrefabs[randomIndex], spawners[randomIndex].position, spawners[randomIndex].rotation);
+
+            //スタートしている時
+            if (StartCameraAnimation.isStart)
+                Instantiate(bulletPrefabs[randomIndex], spawners[randomIndex].position, spawners[randomIndex].rotation);
 
             // 次の発射まで待機
             yield return new WaitForSeconds(spawnInterval+(MasterSpeed.SpeedControl/10));

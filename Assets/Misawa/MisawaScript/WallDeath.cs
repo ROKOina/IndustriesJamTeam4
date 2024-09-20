@@ -29,7 +29,9 @@ public class WallDeath : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-      
+        //スタートしていない時
+        if (!StartCameraAnimation.isStart) return;
+
         // 現在の目的地と対応する速度を取得
         Vector3 currentTarget = targetPositions[currentTargetIndex];
         float currentSpeed = speeds[currentTargetIndex];

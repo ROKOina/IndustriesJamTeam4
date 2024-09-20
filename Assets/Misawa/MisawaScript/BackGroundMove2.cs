@@ -7,7 +7,10 @@ public class BackGroundMove2 : MonoBehaviour
     public float speed = 1;
 
     void Update()
-    {
+    {        
+        //スタートしていない時
+        if (!StartCameraAnimation.isStart) return;
+
         transform.position -= new Vector3(Time.deltaTime * (speed+ MasterSpeed.SpeedControl), 0f);
 
         if (transform.position.x <= -19.2)

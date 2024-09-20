@@ -19,6 +19,9 @@ public class Plyere_main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //スタートしていない時
+        if (!StartCameraAnimation.isStart) return;
+
         distance = Vector2.Distance(transform.position, Player.transform.position);
         if (distance >= 0 && distance <= 0.5)
         {
