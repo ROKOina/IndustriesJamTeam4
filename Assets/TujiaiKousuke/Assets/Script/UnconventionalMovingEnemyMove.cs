@@ -25,7 +25,7 @@ public class UnconventionalMovingEnemyMove : MonoBehaviour
         //à⁄ìÆèàóù
         Vector2 position = transform.position;
 
-        position.x = position.x + (MoveSpeed + OwnSpeedX) * Time.deltaTime;
+        position.x = position.x + (MasterSpeed.SpeedControl + OwnSpeedX) * Time.deltaTime;
 
         position.y = position.y + Mathf.Cos(temp) * OwnSpeedY * Time.deltaTime;
 
