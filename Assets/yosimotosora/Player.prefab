@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df613993a9915564ba12853492999f7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,9 +148,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Life: 3
   PleyreSpeed: 5
-  gool: {fileID: 0}
+  Nameraka: 0.5
+  gool: {fileID: 5328355302915515892, guid: 315bc8b88d4fd1d4dbe63422dc59bf95, type: 3}
   distance: 0
-  Offset: {x: 0, y: 0, z: 0}
   dist: 0
   start: 0
   HPSlider: {fileID: 0}
+  Kaisuu: 1
+  Kanou: 1
+  distancePlayer: 0
