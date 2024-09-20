@@ -8,10 +8,18 @@ public class SpecificSpawner : MonoBehaviour
     public Transform[] spawners;         // スポナーの位置（3か所）
     public float spawnInterval = 1f;     // 弾を発射する間隔（秒）
 
-    private void Start()
+    private bool isSpawan = false;
+
+    private void Update()
     {
+
+        //スタートしている時
+        if (!StartCameraAnimation.isStart) return;
+        if (isSpawan) return;
+
         // 弾を定期的に発射するコルーチンを開始
         StartCoroutine(SpawnBullets());
+        isSpawan = true;
     }
 
     private IEnumerator SpawnBullets()
@@ -23,12 +31,10 @@ public class SpecificSpawner : MonoBehaviour
 
             // 選択されたスポナーから特定の弾を発射
 
-            //スタートしている時
-            if (StartCameraAnimation.isStart)
-                Instantiate(bulletPrefabs[randomIndex], spawners[randomIndex].position, spawners[randomIndex].rotation);
+            Instantiate(bulletPrefabs[randomIndex], spawners[randomIndex].position, spawners[randomIndex].rotation);
 
             // 次の発射まで待機
-            yield return new WaitForSeconds(spawnInterval+(MasterSpeed.SpeedControl/10));
+            yield return new WaitForSeconds(spawnInterval + (MasterSpeed.SpeedControl / 10));
         }
     }
 }
