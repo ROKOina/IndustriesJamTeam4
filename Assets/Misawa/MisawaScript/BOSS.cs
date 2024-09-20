@@ -20,6 +20,9 @@ public class BOSS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //スタートしていない時
+        if (!StartCameraAnimation.isStart) return;
+
         elapsedTime += Time.deltaTime;
 
         // 経過時間が設定した間隔を超えたら

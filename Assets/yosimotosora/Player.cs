@@ -74,6 +74,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //スタートしていない時
+        if (!StartCameraAnimation.isStart) return;
+
         distance = gool.transform.position.y - transform.position.y;//goolのｙの座標と自分のオブジェクトのｙ
         if (distance*distance>=1&&moveFlg==false) 
         {

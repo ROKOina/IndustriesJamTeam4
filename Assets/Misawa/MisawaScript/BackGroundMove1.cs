@@ -8,6 +8,9 @@ public class BackGroundMove1 : MonoBehaviour
 
     void Update()
     {
+        //スタートしていない時
+        if (!StartCameraAnimation.isStart) return;
+
         transform.position -= new Vector3(Time.deltaTime * (speed + MasterSpeed.SpeedControl), 0f);
 
         if (transform.position.x <= -19.2)
