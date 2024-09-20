@@ -10,7 +10,6 @@ public class FlyingEnemyMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -19,7 +18,7 @@ public class FlyingEnemyMove : MonoBehaviour
         //à⁄ìÆèàóù
         Vector2 position = transform.position;
 
-        position.x = position.x + MasterSpeed.SpeedControl * Time.deltaTime;
+        position.x = position.x + (MoveSpeed-MasterSpeed.SpeedControl) * Time.deltaTime;
 
         transform.position = position;
 
@@ -31,4 +30,13 @@ public class FlyingEnemyMove : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
+        {
+
+
+
+        }
+    }
 }
