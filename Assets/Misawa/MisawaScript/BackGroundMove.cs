@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BackGroundMove : MonoBehaviour
 {
-    private float speed = 2.5f;
+    public float speed = 2.5f;
 
     void Update()
     {
-        transform.position -= new Vector3(Time.deltaTime * speed + MasterSpeed.SpeedControl, 0f);
+        transform.position -= new Vector3(Time.deltaTime * (speed + MasterSpeed.SpeedControl), 0f);
 
         if (transform.position.x <= -19.2)
         {

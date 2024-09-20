@@ -10,12 +10,26 @@ public class PlayerCllider : MonoBehaviour
     float PlayerPositionX;
     bool HitJudge;
     GameObject Enemy;
+    public AudioClip sound01;
+    public AudioClip sound02;
+    public AudioClip sound03;
+    public AudioClip sound04;
+    AudioSource audioa;
+
+    private float damageEffectValue = 0;
+    public float dmgEffSpeed = 1;
+    public float dmgEffPower = 1;
+    private bool isDamage = false;
+
+    public GameObject EnemyDeathEff;
 
     // Start is called before the first frame update
     void Start()
     {
-       // prePosition = transform.position;
-        HitJudge = false;
+        audioa = GetComponent<AudioSource>();
+        // prePosition = transform.position;
+        damageEffectValue = 0;
+         HitJudge = false;
         PlayerPositionX = transform.position.x + gameObject.GetComponent<BoxCollider2D>().size.x * 0.5f + -0.1f;
     }
 
@@ -36,6 +50,18 @@ public class PlayerCllider : MonoBehaviour
         //}
 
         //prePosition = transform.position;
+
+        //ダメージ演出
+        if (isDamage)
+        {
+            damageEffectValue += Time.deltaTime * dmgEffSpeed;
+            if (damageEffectValue > Mathf.PI)
+            {
+                isDamage = false;
+                damageEffectValue = 0;
+            }
+            GameObject.Find("Main Camera").GetComponent<DamageEffect>().intensity = Mathf.Sin(damageEffectValue) * dmgEffPower;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,19 +70,31 @@ public class PlayerCllider : MonoBehaviour
         { //当たった相手が敵だった時
             HitJudge = true;
 
+            float moveX = (-3 - MasterSpeed.SpeedControl) * Time.deltaTime;   //-3は敵の速度固定で進める
             EnemyPositionX = collision.transform.position.x
-                - collision.gameObject.GetComponent<BoxCollider2D>().size.x*0.5f;
-
+                - collision.gameObject.GetComponent<BoxCollider2D>().size.x * 0.5f - moveX * 3;
             //PlayerPositionX = transform.position.x + gameObject.GetComponent<BoxCollider2D>().size.x * 0.5f;
 
-            if (PlayerPositionX > EnemyPositionX+0.1f)
+            if (PlayerPositionX > EnemyPositionX)
             {
+                MasterSpeed.SpeedControl+= 0.5f;
                 Destroy(collision.transform.root.gameObject);
+                AllScore.tokuten += 100;
+                audioa.PlayOneShot(sound03);
+                audioa.PlayOneShot(sound04);
+                Debug.Log(MasterSpeed.SpeedControl);
+                //エフェクト
+                Instantiate(EnemyDeathEff, new Vector2(collision.transform.position.x, collision.transform.position.y), Quaternion.identity);
             }
             else
             {
-                Destroy(collision.transform.root.gameObject);
-                Debug.Log("AAA");
+                Debug.Log("衝突");
+                MasterSpeed.SpeedControl = 0f;
+                //ダメージ演出
+                audioa.PlayOneShot(sound01);
+                audioa.PlayOneShot(sound02);
+                isDamage = true;
+                damageEffectValue = 0;
             }
               
             Enemy = collision.gameObject;

@@ -12,9 +12,15 @@ public class GradualBlink : MonoBehaviour
     bool StertScene = false;
     private Renderer objectRenderer;
     private bool increasingAlpha = true;
+
+    public AudioClip sound01;
+    AudioSource audioa;
     // Start is called before the first frame update
     void Start()
     {
+        audioa = GetComponent<AudioSource>();
+
+        AllScore.tokuten = 0;
         Gliver = 0.01f;
         GliScript = GameObject.Find("Main Camera").GetComponent<GlitchFx>();
         Application.targetFrameRate = 100;
@@ -26,13 +32,18 @@ public class GradualBlink : MonoBehaviour
         {
             StertScene = true;
 
-          
+    
         }
         if (StertScene == true)
         {
+            if (Gliver <= 0.01)
+            {
+                audioa.PlayOneShot(sound01);
+            }
             Gliver += 0.01f;
             if(Gliver>=1)
             {
+             
                 SceneManager.LoadScene("MisawaScene");
             }
         }
