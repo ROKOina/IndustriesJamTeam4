@@ -54,12 +54,15 @@ public class WallDeath : MonoBehaviour
                 //カメラシェイク
                 if (currentTargetIndex == 1)
                 {
-                    audioa.PlayOneShot(sound01);
+     
                     if (!shakeFlag)
                     {
+                        MasterSpeed.SpeedControl = 0;
+                        BOSS.speed = 0;
                         if (GameObject.Find("Main Camera"))
                             if (GameObject.Find("Main Camera").GetComponent<CameraShake>())
                                 GameObject.Find("Main Camera").GetComponent<CameraShake>().Shake();
+                        audioa.PlayOneShot(sound01);
                     }
                     shakeFlag = true;
                 }
