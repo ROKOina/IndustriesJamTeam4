@@ -79,7 +79,7 @@ public class PlayerCllider : MonoBehaviour
             {
                 MasterSpeed.SpeedControl+= 0.5f;
                 Destroy(collision.transform.root.gameObject);
-                AllScore.tokuten += 100;
+                AllScore.tokuten += 10*(MasterSpeed.SpeedControl*10);            
                 audioa.PlayOneShot(sound03);
                 audioa.PlayOneShot(sound04);
                 Debug.Log(MasterSpeed.SpeedControl);
