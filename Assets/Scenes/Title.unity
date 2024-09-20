@@ -655,6 +655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
+    - target: {fileID: 89458874557120927, guid: 5e6e47e14acec19448994a3329b517d4, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 86fe2a49559049d49aa686253717f4bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6e47e14acec19448994a3329b517d4, type: 3}
 --- !u!1 &2028717114
