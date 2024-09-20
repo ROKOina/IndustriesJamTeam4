@@ -7,6 +7,7 @@ public class Ranking : MonoBehaviour
 {
     string[] rank_names = {"1st","2nd","3rd", "4th", "5th"};
     const int rank_count = RankingData.rank_count;
+    int ranking = -1;
 
     TMP_Text[] rank_texts = new TMP_Text[rank_count];
     RankingData data;
@@ -15,6 +16,25 @@ public class Ranking : MonoBehaviour
     void Start()
     {
         data = GetComponent<RankingSystem>().rank_data;
+
+        string name = "New Record";
+        int score = (int)AllScore.tokuten;
+
+        for(int i = 0; i < rank_count; i++)
+        {
+            if(score > data.rank[i])
+            {
+                if(ranking == -1)
+                    ranking = i;
+                
+                string rep_name = data.name[i];
+                int rep_rank = data.rank[i];
+                data.name[i] = name;
+                data.rank[i] = score;
+                name = rep_name;
+                score = rep_rank;
+            }
+        }
 
         for(int i = 0; i < rank_count; i++)
         {
@@ -37,24 +57,12 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    public void SetRank()
+    public void SetName()
     {
         TMP_InputField inp_fld = GameObject.Find("InputField").GetComponent<TMP_InputField>();
         string name = inp_fld.text;
-        int score = (int)AllScore.tokuten;
 
-        for(int i = 0; i < rank_count; i++)
-        {
-            if(score > data.rank[i])
-            {
-                string rep_name = data.name[i];
-                int rep_rank = data.rank[i];
-                data.name[i] = name;
-                data.rank[i] = score;
-                name = rep_name;
-                score = rep_rank;
-            }
-        }
+        data.name[ranking] = name;
     }
 
     public void DelRank()
