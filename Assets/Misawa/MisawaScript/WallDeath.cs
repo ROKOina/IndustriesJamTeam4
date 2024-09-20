@@ -38,6 +38,13 @@ public class WallDeath : MonoBehaviour
         float step = currentSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, step);
 
+        //indexが０の時の位置を越えたらBOSS停止
+        if (currentTargetIndex == 0 && currentTarget.x < transform.position.x)
+        {
+            MasterSpeed.SpeedControl = 0;
+            BOSS.speed = 0;
+        }
+
         // 目的地に到達したかを確認
         if (Vector3.Distance(transform.position, currentTarget) < 0.001f)
         {
