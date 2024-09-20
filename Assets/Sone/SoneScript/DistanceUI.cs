@@ -8,8 +8,8 @@ public class DistanceUI : MonoBehaviour
     public RectTransform enemyIcon;  // Enemyのアイコン (UI上のImage)
 
     public const float minDistance = 0f;    // 最小距離（敵とPlayerが最も近い場合）
-    public const float maxDistance = 10000f;  // 最大距離（敵とPlayerが最も離れる場合）
-    public float iconMovementRange = 0.1f; // アイコンが動く範囲 (UI上でのX軸方向の移動範囲)
+    public const float maxDistance = 8000f;  // 最大距離（敵とPlayerが最も離れる場合）
+    public float iconMovementRange = 0.5f; // アイコンが動く範囲 (UI上でのX軸方向の移動範囲)
 
     // Start is called before the first frame update
     void Start()
